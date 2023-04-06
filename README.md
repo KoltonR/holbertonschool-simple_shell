@@ -1,1 +1,1 @@
-this a group project that will take more then a group of two people but its the simple fact that we our building our first shell scritpt from scratch
+this is a team project done by Kolton Rhodes and Carlos Alacron the credit goes to both and the the people that help us every step of the way as well.
