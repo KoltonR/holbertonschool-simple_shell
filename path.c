@@ -62,20 +62,20 @@ paths_t *get_path(char **env)
 
 	while (env[i] != NULL) /* look for PATH */
 	{
-		if (strncmp(env[i], comparation, 4) == 0) {
+		if (strncmp(env[i], comparation, 4) == 0) 
+		{
 			num = i;
-			break; 
+			break;
 		}
 		i++;
 	}
-        if (num == -1) /* If not PATH found, exit*/
+	if (num == -1) /* If not PATH found, exit*/
 		return (NULL);
 	juanito = &env[num];
-        i = 0;
-	/*count number of files in PATH*/
-		while (juanito[0][i] != '\0') 
+	i = 0;
+	while (juanito[0][i] != '\0')/*count number of files in PATH*/
 		{
-			if (juanito[0][i] == ':') 
+			if (juanito[0][i] == ':')
 			{
 				num_dirs++;
 			}
@@ -83,12 +83,13 @@ paths_t *get_path(char **env)
 		}
 		num_dirs++; /* add 1 to the last file*/
 
-		tmp2 = malloc(sizeof(char *) * num_dirs); /*memory to tmp
-        if (!tmp2)*/
+		tmp2 = malloc(sizeof(char *) * num_dirs); /*memory to tmp2*/
+        if (!tmp2)
 		return (NULL);
 
 	i = 0; /* look for files in PATH, add a tmp*/
-	while (juanito[0][i] != '\0') {
+	while (juanito[0][i] != '\0') 
+	{
 		if (juanito[0][i] == ':') 
 		{
 			juanito[0][i] = '\0';
