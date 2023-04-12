@@ -14,16 +14,17 @@ char *str_concat(char *s1, char *s2)
 	char *res;
 
 	if (!s1)
-	s1 = "";
+		s1 = "";
 
 	if (!s2)
-	s2 = "";
+		s2 = "";
 
 	for (i = 0, len1 = 0; *(s1 + i); i++)
-        len1++;
-
+	{
+		len1++;
+	}
 	for (i = 0, len2 = 0; *(s2 + i); i++)
-	len2++;
+		len2++;
 
 	len = len1 + len2;
 
@@ -31,9 +32,9 @@ char *str_concat(char *s1, char *s2)
 	if (!string)
 	return (NULL);
 	res = string;
-	
+
 	if (string == NULL)
-	return (0);
+		return (0);
 
 	for (; *s1;)
 	*string++ = *s1++;
