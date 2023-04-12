@@ -54,56 +54,23 @@ paths_t *create_struct(paths_t **head, char *str)
  */
 paths_t *get_path(char **env)
 {
-	int i = 0, j = 0, num = -1, count = 0, num_dirs = 0;
-	char **juanito;
-	char **tmp2 = NULL;
-	paths_t *head;
-	char *comparation = "PATH";
+	char *path_var = "PATH=";
+	paths_t *head = NULL;
+	int i;
 
-	while (env[i] != NULL) /* look for PATH */
+	for (i = 0; env[i] != NULL; i++)
 	{
-		if (strncmp(env[i], comparation, 4) == 0) 
+		if (strncmp(env[i], path_var, 5) == 0)
 		{
-			num = i;
+			char *path = env[i] + 5;
+			char *token = strtok(path, ":");
+			while (token != NULL)
+			{
+				create_struct(&head, token);
+				token = strtok(NULL, ":");
+			}
 			break;
 		}
-		i++;
 	}
-	if (num == -1) /* If not PATH found, exit*/
-		return (NULL);
-	juanito = &env[num];
-	i = 0;
-	while (juanito[0][i] != '\0')/*count number of files in PATH*/
-		{
-			if (juanito[0][i] == ':')
-			{
-				num_dirs++;
-			}
-			i++;
-		}
-		num_dirs++; /* add 1 to the last file*/
-
-		tmp2 = malloc(sizeof(char *) * num_dirs); /*memory to tmp2*/
-        if (!tmp2)
-		return (NULL);
-
-	i = 0; /* look for files in PATH, add a tmp*/
-	while (juanito[0][i] != '\0') 
-	{
-		if (juanito[0][i] == ':') 
-		{
-			juanito[0][i] = '\0';
-			tmp2[count++] = &juanito[0][j];
-			j = i + 1;
-		}
-		i++;
-	}
-	tmp2[count++] = &juanito[0][j];
-	tmp2[count] = NULL;
-
-	head = NULL; /*linked list to files*/
-	for (i = 0; tmp2[i]; i++)
-		create_struct(&head, tmp2[i]);
-	free(tmp2);
-	return (head);
+return (head);
 }
