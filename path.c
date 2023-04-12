@@ -38,19 +38,19 @@ paths_t *create_struct(paths_t **head, char *str)
 
 	if (!new_node)
 		return (NULL);
+
 	new_node->path = _strdup(str);
-if (!new_node->path)
-{
+
+	if (!new_node->path)
+	{
 	free(new_node);
 	return (NULL);
-}
-                new_node->next = *head;
-	        *head = new_node;
-
-		return (new_node);
 	}
+	new_node->next = *head;
+	*head = new_node;
 
-
+	return (new_node);
+}
 /**
  *  get_path - Function to generate the path
  *   @env: Receive the env of the shell
@@ -60,7 +60,7 @@ if (!new_node->path)
 paths_t *get_path(char **env)
 {
 	int i = 0, j = 0, num, count;
-        char **juanito;
+	char **juanito;
 	char *tmp, **tmp2 = NULL;
 	paths_t *head;
 	char *comparation = "PATH";
