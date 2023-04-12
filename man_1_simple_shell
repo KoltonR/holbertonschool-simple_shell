@@ -6,7 +6,7 @@
 - A simple command line interpreter for linux
 
 .SH COPYRIGHT
-    Public Domain, no copvi yright protection
+    Public Domain, no copviyright protection
 
 .SH SYNOPSIS
 This shell mimics /bin/sh in it's funcationaly. It can be ran in both interacitve and noninteractive modes.
@@ -55,4 +55,3 @@ Please report any issues to the authors.
 
 .SH "AUTHOR"
 Kolton Rhodes and Carlos Alacron
-
