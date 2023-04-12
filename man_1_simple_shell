@@ -1,4 +1,4 @@
-.TH hsh 1 "April 05, 2023" "1" "Simple Shell"
+TH hsh 1 "April 05, 2023" "1" "Simple Shell"
 
 .SH NAME
 
@@ -55,3 +55,4 @@ Please report any issues to the authors.
 
 .SH "AUTHOR"
 Kolton Rhodes and Carlos Alacron
+
