@@ -16,7 +16,7 @@ void exec_args(char *buff, char **argv, char **pars, char **env, paths_t *path)
 	char *text_parsed;
 
 	/**
-	 * Forking a child 
+	 * Forking a child
 	 */
 	pid = fork();
 
