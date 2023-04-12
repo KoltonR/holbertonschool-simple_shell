@@ -30,7 +30,7 @@ void exec_args(char *buff, char **argv, char **pars, char **env, paths_t *path)
 			write(STDERR_FILENO, "1", 1);
 			write(STDERR_FILENO, ": ", 2);
 			write(STDERR_FILENO, text_parsed, _strlen(text_parsed));
-		        write(STDERR_FILENO, ": not found\n", 13);
+			write(STDERR_FILENO, ": not found\n", 13);
 			free(buff);
 			free_list(path);
 		}
