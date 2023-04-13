@@ -51,26 +51,27 @@ paths_t *create_struct(paths_t **head, char *str)
  *   @env: Receive the env of the shell
  *
  *   Return: string whit the path
- */
-paths_t *get_path(char **env)
-{
-	char *path_var = "PATH=";
-	paths_t *head = NULL;
-	int i;
 
-	for (i = 0; env[i] != NULL; i++)
-	{
-		if (strncmp(env[i], path_var, 5) == 0)
-		{
-			char *path = env[i] + 5;
-			char *token = strtok(path, ":");
-			while (token != NULL)
-			{
-				create_struct(&head, token);
-				token = strtok(NULL, ":");
-			}
-			break;
-		}
-	}
-return (head);
-}
+*paths_t *get_path(char **env)
+*{
+*	char *path_var = "PATH=";
+*	paths_t *head = NULL;
+*	int i;
+*
+*	for (i = 0; env[i] != NULL; i++)
+*	{
+*		if (strncmp(env[i], path_var, 5) == 0)
+*		{
+*			char *path = env[i] + 5;
+*			char *token = strtok(path, ":");
+*			while (token != NULL)
+*			{
+*				create_struct(&head, token);
+*				token = strtok(NULL, ":");
+*			}
+*			break;
+*		}
+*	}
+*return (head);
+*}
+*/
