@@ -88,7 +88,6 @@ char *_concat(char *tmp, char **av, char *tok)
 	_strcat(tmp, tok);
 	_strcat(tmp, "/");
 	_strcat(tmp, av[0]);
-        tmp[len - 1] = '\0';
+	tmp[len - 1] = '\0';
 	return (tmp);
 }
-
